@@ -11,7 +11,7 @@ class MicrosecondFormatter(logging.Formatter):
         record: logging.LogRecord,
         datefmt: str | None = None,
     ) -> str:
-        dt = datetime.datetime.fromtimestamp(record.created, datetime.UTC).astimezone()
+        dt = datetime.datetime.fromtimestamp(record.created, datetime.UTC)
         return dt.strftime(datefmt) if datefmt else dt.isoformat()
 
 
