@@ -7,7 +7,7 @@ packages = ["src/cham_logging"]
 
 [project]
 name = "cham-logging"
-version = "0.1.1"
+version = "0.1.2"
 description = "A small stdlib-only helper for configuring Python logging."
 readme = "README.md"
 requires-python = ">=3.12"
