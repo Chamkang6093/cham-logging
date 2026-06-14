@@ -1,18 +1,24 @@
+from __future__ import annotations
+
 import datetime
 import logging
 import os
 
 
 class MicrosecondFormatter(logging.Formatter):
-    def formatTime(self, record, datefmt=None):
-        dt = datetime.datetime.fromtimestamp(record.created, datetime.timezone.utc).astimezone()
+    def formatTime(  # noqa: N802
+        self,
+        record: logging.LogRecord,
+        datefmt: str | None = None,
+    ) -> str:
+        dt = datetime.datetime.fromtimestamp(record.created, datetime.UTC).astimezone()
         return dt.strftime(datefmt) if datefmt else dt.isoformat()
 
 
 FORMATTER = MicrosecondFormatter("%(asctime)s - %(levelname)s - %(message)s")
 
 
-def init_logger():
+def init_logger() -> None:
     log_level = os.environ.get("LOG_LEVEL", "INFO").upper()
 
     logger = logging.getLogger()
