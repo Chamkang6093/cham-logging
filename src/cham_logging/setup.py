@@ -13,19 +13,19 @@ FORMATTER = MicrosecondFormatter("%(asctime)s - %(levelname)s - %(message)s")
 
 
 def init_logger():
-    loglevel = os.environ.get("LOGLEVEL", "INFO").upper()
+    log_level = os.environ.get("LOG_LEVEL", "INFO").upper()
 
     logger = logging.getLogger()
-    logger.setLevel(loglevel)
+    logger.setLevel(log_level)
 
     handler = logging.StreamHandler()
-    handler.setLevel(loglevel)
+    handler.setLevel(log_level)
     handler.setFormatter(FORMATTER)
     logger.addHandler(handler)
 
     log_file = os.environ.get("LOG_FILE")
     if log_file:
         file_handler = logging.FileHandler(log_file, encoding="utf-8")
-        file_handler.setLevel(loglevel)
+        file_handler.setLevel(log_level)
         file_handler.setFormatter(FORMATTER)
         logger.addHandler(file_handler)
