@@ -7,7 +7,7 @@ packages = ["src/cham_logging"]
 
 [project]
 name = "cham-logging"
-version = "0.1.0"
+version = "0.1.1"
 description = "A small stdlib-only helper for configuring Python logging."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -15,4 +15,15 @@ license = "MIT"
 authors = [
   { name = "Cham" },
 ]
+keywords = ["logging", "stdlib"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+]
 dependencies = []
+
+[project.urls]
+Repository = "https://github.com/Chamkang6093/cham-logging"
