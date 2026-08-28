@@ -3,7 +3,7 @@ requires = ['hatchling >= 1.26']
 build-backend = 'hatchling.build'
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/cham_logging"]
+packages = ["cham_logging"]
 
 [project]
 name = "cham-logging"
