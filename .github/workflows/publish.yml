@@ -29,7 +29,7 @@ jobs:
         run: uv build --no-sources
 
       - name: Check wheel import
-        run: uv run --with dist/*.whl --no-project -- python -c "from cham_logging.bootstrap import init_logger; print(init_logger)"
+        run: uv run --with dist/*.whl --no-project -- python -I -c "from cham_logging.bootstrap import init_logger; import cham_logging; print(cham_logging.__file__)"
 
       - name: Upload package distributions
         uses: actions/upload-artifact@v4
